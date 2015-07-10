@@ -13,7 +13,7 @@ var Interface = function(name, methods) {
 
         this.methods.push(methods[i]);
     }
-}
+};
 
 
 // static class
@@ -29,13 +29,11 @@ Interface.ensureImplements = function(object) {
             throw new Error("Arguments here need to be instance of Interface");
         }
 
-        for(var j=0, methodsLen=instance.methods.length; j<methodsLen; j++) {
-            var method = instance.methods[j];
+        for(var j=0, methodsLen=interface.methods.length; j<methodsLen; j++) {
+            var method = interface.methods[j];
             if(!object[method] || typeof object[method] != 'function') {
                 throw new Error(method + " method is not found");
             }
         }
     }
-
-
-}
+};
